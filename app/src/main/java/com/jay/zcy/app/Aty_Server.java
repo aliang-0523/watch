@@ -55,6 +55,7 @@ public class Aty_Server extends Activity {
     public String str1=null;
     WriteThread writeThread=new WriteThread(str1);
     WriteThread writeThread2=new WriteThread(str1);
+
     WriteThread writeThread3=new WriteThread(str1);
     public LocationManager mLocationManager;//位置管理器
     private Location getLocation() {
