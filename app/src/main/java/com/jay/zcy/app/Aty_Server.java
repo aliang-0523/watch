@@ -248,9 +248,9 @@ public class Aty_Server extends Activity {
     };
 
     private void sendData() {
-        this.sensorManager.registerListener(this.listener, sensor1, SensorManager.SENSOR_DELAY_NORMAL);
-        this.sensorManager.registerListener(this.listener, sensor2, SensorManager.SENSOR_DELAY_NORMAL);
-        this.sensorManager.registerListener(this.listener, sensor3, SensorManager.SENSOR_DELAY_NORMAL);
+        this.sensorManager.registerListener(this.listener, sensor1, SensorManager.SENSOR_DELAY_FASTEST);
+        this.sensorManager.registerListener(this.listener, sensor2, SensorManager.SENSOR_DELAY_FASTEST);
+        this.sensorManager.registerListener(this.listener, sensor3, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
     public class WriteThread extends Thread{
@@ -300,32 +300,6 @@ public class Aty_Server extends Activity {
                 //ClientThread clientThread=new ClientThread(Aty_Server.this,s.toString());
                 //clientThread.run();
                 writeThread.run();
-            }
-            if (e.sensor.equals(sensor2)) {
-                //相当于一个string  空的字符串 处理字符串时stringBuffer优于String
-                //StringBuffer类中的方法主要偏重于对于字符串的变化，例如追加、插入和删除等，这个也是StringBuffer和String类的主要区别。
-
-
-                //  s.append("sensor1 " + CurentTimeString.getTime() + " " +e.values[0] + " " + e.values[1] + " "+e.values[2] +"\n");
-
-                writeThread2.setText("sensor2 " + CurentTimeString.getTime() + " " + Math.round(e.values[0] * 100) + " " + Math.round(e.values[1] * 100) + " " + Math.round(e.values[2] * 100) +" "+"\n");
-                //向客户端发送数据
-                //ClientThread clientThread=new ClientThread(Aty_Server.this,s.toString());
-                //clientThread.run();
-                writeThread2.run();
-            }
-            if (e.sensor.equals(sensor3)) {
-                //相当于一个string  空的字符串 处理字符串时stringBuffer优于String
-                //StringBuffer类中的方法主要偏重于对于字符串的变化，例如追加、插入和删除等，这个也是StringBuffer和String类的主要区别。
-
-
-                //  s.append("sensor1 " + CurentTimeString.getTime() + " " +e.values[0] + " " + e.values[1] + " "+e.values[2] +"\n");
-
-                writeThread3.setText("sensor3 " + CurentTimeString.getTime() + " " + Math.round(e.values[0] * 100) + " " + Math.round(e.values[1] * 100) + " " + Math.round(e.values[2] * 100) +" "+"\n");
-                //向客户端发送数据
-                //ClientThread clientThread=new ClientThread(Aty_Server.this,s.toString());
-                //clientThread.run();
-                writeThread3.run();
             }
 
             //            else if (e.sensor.equals(sensor2)) {
