@@ -5,7 +5,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        applicationId "com.jay.zcy.handler"
+        applicationId "com.sword.sunjian.handler"
         minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
